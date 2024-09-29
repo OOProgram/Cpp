@@ -1,24 +1,24 @@
 #include <iostream>
-#include <string>
-#include "Ram.h"
-
 using namespace std;
 
+#include "Ram.h"
+
 Ram::Ram() {
-	for (int i = 0; i < 100 * 1024; i++) {
+	for (int i = 0; i < 100 * 1024; i++)
 		mem[i] = 0;
-	}
 	size = 100 * 1024;
 }
+
 Ram::~Ram() {
-	cout << "ë©”ëª¨ë¦¬ ì œê±°ë¨" << endl;
+	cout << "¸Þ¸ð¸® Á¦°ÅµÊ";
 }
+
+//address ÁÖ¼ÒÀÇ ¸Þ¸ð¸® ¹ÙÀÌÆ® ¸®ÅÏ
 char Ram::read(int address) {
 	return mem[address];
 }
+
+//address ÁÖ¼Ò¿¡ ÇÑ ¹ÙÀÌÆ®·Î value ÀúÀå
 void Ram::write(int address, char value) {
 	mem[address] = value;
 }
-
-
-
