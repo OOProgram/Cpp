@@ -8,22 +8,23 @@ using namespace std;
 GamblingGame::GamblingGame() {
 	string name;
 
-	cout << "***** °·ºí¸µ °ÔÀÓÀ» ½ÃÀÛÇÕ´Ï´Ù. *****" << endl;
-	cout << "Ã¹¹øÂ° ¼±¼ö ÀÌ¸§>>";
+	cout << "***** ê°¬ë¸”ë§ ê²Œìž„ì„ ì‹œìž‘í•©ë‹ˆë‹¤. *****" << endl;
+	cout << "ì²«ë²ˆì§¸ ì„ ìˆ˜ ì´ë¦„>>";
 	getline(cin, name);
 	playerArr[0].setName(name);
-	cout << "µÎ¹øÂ° ¼±¼ö ÀÌ¸§>>";
+	cout << "ë‘ë²ˆì§¸ ì„ ìˆ˜ ì´ë¦„>>";
 	getline(cin, name);
 	playerArr[1].setName(name);
 }
 
 void GamblingGame::play() {
 	bool end = true;
+	string spc;
 	srand(time(0));
 	while (end) {
 		for (int i = 0; i < 2; i++) {
 			cout << playerArr[i].getName() << ":";
-			cin.get();
+			getline(cin, spc);
 
 			int n1 = rand() % 3;
 			int n2 = rand() % 3;
@@ -31,13 +32,13 @@ void GamblingGame::play() {
 
 			if ((n1 == n2) && (n2 == n3)) {
 				cout << "	" << n1 << "     " << n2 << "     " << n3;
-				cout << "     " << playerArr[i].getName() << "´Ô ½Â¸®!!";
+				cout << "     " << playerArr[i].getName() << "ë‹˜ ìŠ¹ë¦¬!!";
 				end = false;
 				break;
 			}
 			else {
 				cout << "	" << n1 << "     " << n2 << "     " << n3;
-				cout << "     " << "¾Æ½±±º¿ä!" << endl;
+				cout << "     " << "ì•„ì‰½êµ°ìš”!" << endl;
 			}
 		}
 	}
