@@ -10,7 +10,7 @@ public:
         this->size = size;
         scores = new int[size];
     }
-    //Dept(Dept& dept);
+    //Dept(const Dept& dept);
     ~Dept();
     int getSize() { return size; }
     void read();
@@ -18,7 +18,7 @@ public:
 };
 
 /*
-Dept::Dept(Dept& dept) {
+Dept::Dept(const Dept& dept) {
     this->size = dept.size;
     this->scores = new int[size];
     for (int i = 0; i < size; i++)
