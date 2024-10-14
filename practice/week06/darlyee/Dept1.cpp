@@ -2,7 +2,7 @@
 #include "Dept1.h"
 using namespace std;
 
-Dept::Dept(int size) {   //»ý¼ºÀÚ
+Dept::Dept(int size) {
 	this->size = size;
 	scores = new int[size];
 }
@@ -19,7 +19,7 @@ int Dept::getSize() {
 
 //
 void Dept::read() {
-	cout << size << "°³ Á¡¼ö ÀÔ·Â>>";
+	cout << size << "ê°œ ì ìˆ˜ ìž…ë ¥>>";
 	for (int i = 0; i < size; i++)
 		cin >> scores[i];
 }
