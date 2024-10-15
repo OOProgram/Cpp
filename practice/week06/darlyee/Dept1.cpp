@@ -12,23 +12,19 @@ Dept::~Dept() {
 		delete[] scores;
 }
 
-
 int Dept::getSize() {
 	return size;
 }
 
-//
 void Dept::read() {
 	cout << size << "개 점수 입력>>";
 	for (int i = 0; i < size; i++)
 		cin >> scores[i];
 }
 
-//
 bool Dept::isOver60(int index) {
 	return scores[index] > 60;
 }
-
 
 int countPass(Dept& dept) {
 	int count = 0;
