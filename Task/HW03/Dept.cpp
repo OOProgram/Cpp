@@ -9,8 +9,7 @@ Dept::Dept(int size) {
 
 Dept::Dept(const Dept& dept) {
 	this->size = dept.size;
-	this->scores = new int[this->size];  // »õ·Î¿î ¸Þ¸ð¸® °ø°£ ÇÒ´ç
-	// ¿øº» °´Ã¼ÀÇ ¹è¿­ ³»¿ëÀ» º¹»ç
+	this->scores = new int[this->size];
 	for (int i = 0; i < this->size; i++)
 		(this->scores)[i] = dept.scores[i];
 }
@@ -26,7 +25,7 @@ int Dept::getSize() {
 }
 
 void Dept::read() {
-	cout << size << "°³ Á¡¼ö ÀÔ·Â>>";
+	cout << size << "ê°œ ì ìˆ˜ ìž…ë ¥>>";
 	for(int i=0;i<size;i++)
 		cin >> scores[i];
 }
