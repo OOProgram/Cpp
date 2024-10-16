@@ -4,8 +4,8 @@ using namespace std;
 
 
 int main() {
-	Dept com(10);   //ÃÑ 10¸íÀÌ ÀÖ´Â ÇĞ°ú
+	Dept com(10);
 	com.read();
 	int n = countPass(com);
-	cout << "60Á¡ ÀÌ»óÀº " << n << "¸í";
+	cout << "60ì  ì´ìƒì€ " << n << "ëª…";
 }
