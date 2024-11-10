@@ -10,7 +10,6 @@ Printer::Printer() {
 	manufacturer = "";
 }
 
-//À×Å©Á¬ ÇÁ¸°ÅÍ »ı¼ºÀÚ
 InkJetPrinter::InkJetPrinter(string model,string manufacturer,int availableCount, int availableInk) {
 	this->model = model;
 	this->manufacturer = manufacturer;
@@ -18,7 +17,6 @@ InkJetPrinter::InkJetPrinter(string model,string manufacturer,int availableCount
 	this->availableInk = availableInk;
 }
 
-//·¹ÀÌÀú ÇÁ¸°ÅÍ »ı¼ºÀÚ
 LaserPrinter::LaserPrinter(string model, string manufacturer, int availableCount, float availableToner) {
 	this->model = model;
 	this->manufacturer = manufacturer;
@@ -26,44 +24,33 @@ LaserPrinter::LaserPrinter(string model, string manufacturer, int availableCount
 	this->availableToner = availableToner;
 }
 
-//ÇÁ¸°ÅÍ ¼Ò¸êÀÚ
 Printer::~Printer() {}
 
-//À×Å©Á¬ ÇÁ¸°ÅÍ ¼Ò¸êÀÚ
 InkJetPrinter::~InkJetPrinter() {}
 
-//·¹ÀÌÀú ÇÁ¸°ÅÍ ¼Ò¸êÀÚ
 LaserPrinter::~LaserPrinter() {}
 
-
-//ÇÁ¸°ÅÍ·Î ÇÁ¸°Æ®..?
 void Printer::print(int pages) {
-	cout << "ÇÁ¸°Æ®ÇÏ¿´½À´Ï´Ù." << endl;
+	cout << "í”„ë¦°íŠ¸í•˜ì˜€ìŠµë‹ˆë‹¤." << endl;
 	availableCount -= pages;
 }
 
-//À×Å©Á¬ ÇÁ¸°ÅÍ·Î ÇÁ¸°Æ®
 void InkJetPrinter::printInkJet(int pages) {
-	print(pages);   //Printer¸¦ »ó¼Ó¹Ş¾ÒÀ¸¹Ç·Î
+	print(pages);   //Printerë¥¼ ìƒì†ë°›ì•˜ìœ¼ë¯€ë¡œ
 	availableInk -= pages;
 }
 
-//·¹ÀÌÀú ÇÁ¸°ÅÍ·Î ÇÁ¸°Æ®
 void LaserPrinter::printLaser(int pages) {
-	print(pages);   //Printer¸¦ »ó¼Ó¹Ş¾ÒÀ¸¹Ç·Î
+	print(pages);   //Printerë¥¼ ìƒì†ë°›ì•˜ìœ¼ë¯€ë¡œ
 	availableToner -= pages*0.5;
 }
 
-
-
-//À×Å©Á¬ ÇÁ¸°ÅÍ Á¤º¸ Ãâ·Â
 void InkJetPrinter::showIJPinfo() {
-	cout << model << ", " << manufacturer << ", ³²Àº Á¾ÀÌ " << availableCount << "Àå, ³²Àº À×Å© " << availableInk<<endl;
+	cout << model << ", " << manufacturer << ", ë‚¨ì€ ì¢…ì´ " << availableCount << "ì¥, ë‚¨ì€ ì‰í¬ " << availableInk<<endl;
 }
 
-//·¹ÀÌÀú ÇÁ¸°ÅÍ Á¤º¸ Ãâ·Â
 void LaserPrinter::showLPinfo() {
-	cout << model << ", " << manufacturer << ", ³²Àº Á¾ÀÌ " << availableCount << "Àå, ³²Àº Åä³Ê " << availableToner<<endl;
+	cout << model << ", " << manufacturer << ", ë‚¨ì€ ì¢…ì´ " << availableCount << "ì¥, ë‚¨ì€ í† ë„ˆ " << availableToner<<endl;
 }
 
 int Printer::getavailableCount() {

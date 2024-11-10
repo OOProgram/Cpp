@@ -5,39 +5,37 @@ using namespace std;
 int main() {
 	int end = 1;
 
-	InkJetPrinter *ijp = new InkJetPrinter("Office V40", "HP", 5, 10);   //°´Ã¼ µ¿Àû »ı¼º
-	LaserPrinter* lp = new LaserPrinter("SCX-6x45", "»ï¼ºÀüÀÚ", 3, 20);   //°´Ã¼ µ¿Àû »ı¼º
+	InkJetPrinter *ijp = new InkJetPrinter("Office V40", "HP", 5, 10);  
+	LaserPrinter* lp = new LaserPrinter("SCX-6x45", "ì‚¼ì„±ì „ì", 3, 20);  
 
-	cout << "ÇöÀç ÀÛµ¿ ÁßÀÎ 2´ëÀÇ ÇÁ¸°ÅÍ´Â ¾Æ·¡¿Í °°´Ù." << endl;
-	cout << "À×Å©Á¬ : ";
-	ijp->showIJPinfo();   //Á¤º¸ Ãâ·Â
-	cout << "·¹ÀÌÀú : ";
-	lp->showLPinfo();   //Á¤º¸ Ãâ·Â
+	cout << "í˜„ì¬ ì‘ë™ ì¤‘ì¸ 2ëŒ€ì˜ í”„ë¦°í„°ëŠ” ì•„ë˜ì™€ ê°™ë‹¤." << endl;
+	cout << "ì‰í¬ì ¯ : ";
+	ijp->showIJPinfo();  
+	cout << "ë ˆì´ì € : ";
+	lp->showLPinfo();   
 
 	while (end) {
 		int what, pages;
-		cout << endl << "ÇÁ¸°ÅÍ(1:À×Å©Á¬, 2:·¹ÀÌÀú)¿Í ¸Å¼ö ÀÔ·Â>>";
+		cout << endl << "í”„ë¦°í„°(1:ì‰í¬ì ¯, 2:ë ˆì´ì €)ì™€ ë§¤ìˆ˜ ì…ë ¥>>";
 		cin >> what >> pages;
 		if (what == 1) {
 			if (pages <= ijp->getavailableCount())
 				ijp->printInkJet(pages);
 			else
-				cout << "¿ëÁö°¡ ºÎÁ·ÇÏ¿© ÇÁ¸°Æ®ÇÒ ¼ö ¾ø½À´Ï´Ù."<<endl;
+				cout << "ìš©ì§€ê°€ ë¶€ì¡±í•˜ì—¬ í”„ë¦°íŠ¸í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤."<<endl;
 		}
 		else if(what == 2) {
 			if (pages <= lp->getavailableCount())
 				lp->printLaser(pages);
 			else
-				cout << "¿ëÁö°¡ ºÎÁ·ÇÏ¿© ÇÁ¸°Æ®ÇÒ ¼ö ¾ø½À´Ï´Ù."<<endl;
+				cout << "ìš©ì§€ê°€ ë¶€ì¡±í•˜ì—¬ í”„ë¦°íŠ¸í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤."<<endl;
 		}
 
 		ijp->showIJPinfo();
 		lp->showLPinfo();
 
-
-		//Áß´Ü Á¶°Ç
 		string ing = "";
-		cout << "°è¼Ó ÇÁ¸°Æ® ÇÏ½Ã°Ú½À´Ï±î(y/n)>>";
+		cout << "ê³„ì† í”„ë¦°íŠ¸ í•˜ì‹œê² ìŠµë‹ˆê¹Œ(y/n)>>";
 		cin >> ing;
 		if (ing == "n")
 			end = 0;
