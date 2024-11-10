@@ -3,34 +3,34 @@
 
 class Printer {
 protected:
-	string model;   //모델명
-	string manufacturer;   //제조사
-	int availableCount;   //인쇄 종이 잔량
+	string model;
+	string manufacturer;
+	int availableCount;
 
 public:
-	int printedCount;   //인쇄 매수
-	Printer();   //생성자
-	~Printer();   //소멸자
-	void print(int pages);   //멤버 함수 : 호출될 때마다 pages매의 용지 사용
+	int printedCount;
+	Printer();
+	~Printer(); 
+	void print(int pages);
 	int getavailableCount();
 };
 
-class InkJetPrinter:public Printer {   //Printer을 상속 받음
-	int availableInk;   //잉크 잔량
+class InkJetPrinter:public Printer {
+	int availableInk;
 public:
-	InkJetPrinter(string model, string manufacturer, int availableCount, int availableInk);   //생성자
-	~InkJetPrinter();   //소멸자
-	void printInkJet(int pages);   //멤버 함수
-	void showIJPinfo();   //정보 출력
+	InkJetPrinter(string model, string manufacturer, int availableCount, int availableInk); 
+	~InkJetPrinter();
+	void printInkJet(int pages); 
+	void showIJPinfo();   
 	
 
 };
 
-class LaserPrinter:public Printer {   //Printer을 상속받음
-	float availableToner;   //토너 잔량
+class LaserPrinter:public Printer {  
+	float availableToner; 
 public:
-	LaserPrinter(string model, string manufacturer, int availableCount, float availableToner);   //생성자
-	~LaserPrinter();   //소멸자
-	void printLaser(int pages);   //멤버 함수
-	void showLPinfo();   //정보 출력
+	LaserPrinter(string model, string manufacturer, int availableCount, float availableToner); 
+	~LaserPrinter();  
+	void printLaser(int pages);
+	void showLPinfo(); 
 };
