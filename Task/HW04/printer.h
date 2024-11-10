@@ -3,34 +3,34 @@
 
 class Printer {
 protected:
-	string model;   //¸ğµ¨¸í
-	string manufacturer;   //Á¦Á¶»ç
-	int availableCount;   //ÀÎ¼â Á¾ÀÌ ÀÜ·®
+	string model;   //ëª¨ë¸ëª…
+	string manufacturer;   //ì œì¡°ì‚¬
+	int availableCount;   //ì¸ì‡„ ì¢…ì´ ì”ëŸ‰
 
 public:
-	int printedCount;   //ÀÎ¼â ¸Å¼ö
-	Printer();   //»ı¼ºÀÚ
-	~Printer();   //¼Ò¸êÀÚ
-	void print(int pages);   //¸â¹ö ÇÔ¼ö : È£ÃâµÉ ¶§¸¶´Ù apges¸ÅÀÇ ¿ëÁö »ç¿ë
+	int printedCount;   //ì¸ì‡„ ë§¤ìˆ˜
+	Printer();   //ìƒì„±ì
+	~Printer();   //ì†Œë©¸ì
+	void print(int pages);   //ë©¤ë²„ í•¨ìˆ˜ : í˜¸ì¶œë  ë•Œë§ˆë‹¤ pagesë§¤ì˜ ìš©ì§€ ì‚¬ìš©
 	int getavailableCount();
 };
 
-class InkJetPrinter:public Printer {   //PrinterÀ» »ó¼Ó ¹ŞÀ½
-	int availableInk;   //À×Å© ÀÜ·®
+class InkJetPrinter:public Printer {   //Printerì„ ìƒì† ë°›ìŒ
+	int availableInk;   //ì‰í¬ ì”ëŸ‰
 public:
-	InkJetPrinter(string model, string manufacturer, int availableCount, int availableInk);   //»ı¼ºÀÚ
-	~InkJetPrinter();   //¼Ò¸êÀÚ
-	void printInkJet(int pages);   //¸â¹ö ÇÔ¼ö
-	void showIJPinfo();   //Á¤º¸ Ãâ·Â
+	InkJetPrinter(string model, string manufacturer, int availableCount, int availableInk);   //ìƒì„±ì
+	~InkJetPrinter();   //ì†Œë©¸ì
+	void printInkJet(int pages);   //ë©¤ë²„ í•¨ìˆ˜
+	void showIJPinfo();   //ì •ë³´ ì¶œë ¥
 	
 
 };
 
-class LaserPrinter:public Printer {   //PrinterÀ» »ó¼Ó¹ŞÀ½
-	float availableToner;   //Åä³Ê ÀÜ·®
+class LaserPrinter:public Printer {   //Printerì„ ìƒì†ë°›ìŒ
+	float availableToner;   //í† ë„ˆ ì”ëŸ‰
 public:
-	LaserPrinter(string model, string manufacturer, int availableCount, float availableToner);   //»ı¼ºÀÚ
-	~LaserPrinter();   //¼Ò¸êÀÚ
-	void printLaser(int pages);   //¸â¹ö ÇÔ¼ö
-	void showLPinfo();   //Á¤º¸ Ãâ·Â
+	LaserPrinter(string model, string manufacturer, int availableCount, float availableToner);   //ìƒì„±ì
+	~LaserPrinter();   //ì†Œë©¸ì
+	void printLaser(int pages);   //ë©¤ë²„ í•¨ìˆ˜
+	void showLPinfo();   //ì •ë³´ ì¶œë ¥
 };
