@@ -25,21 +25,21 @@ void Rect::draw() {
 
 int UI::selectBehavior() {
 	int n;
-	cout << "»ðÀÔ:1, »èÁ¦:2, ¸ðµÎº¸±â:3, Á¾·á:4 >> ";
+	cout << "ì‚½ìž…:1, ì‚­ì œ:2, ëª¨ë‘ë³´ê¸°:3, ì¢…ë£Œ:4 >> ";
 	cin >> n;
 	return n;
 }
 
 int UI::selectShape() {
 	int n;
-	cout << "¼±:1, ¿ø:2, »ç°¢Çü:3 >> ";
+	cout << "ì„ :1, ì›:2, ì‚¬ê°í˜•:3 >> ";
 	cin >> n;
 	return n;
 }
 
 int UI::selectIndex() {
 	int n;
-	cout << "»èÁ¦ÇÏ°íÀÚ ÇÏ´Â µµÇüÀÇ ÀÎµ¦½º >> ";
+	cout << "ì‚­ì œí•˜ê³ ìž í•˜ëŠ” ë„í˜•ì˜ ì¸ë±ìŠ¤ >> ";
 	cin >> n;
 	return n;
 }
@@ -54,15 +54,15 @@ GraphicEditor::~GraphicEditor() {
 
 void GraphicEditor::inputShape(int num) {
 	switch (num) {
-	case 1:   //¸¸¾à ¼±À» ¼±ÅÃÇß´Ù¸é
+	case 1:   
 		v.push_back(new Line());
 		break;
 
-	case 2:   //¸¸¾à ¿øÀ» ¼±ÅÃÇß´Ù¸é
+	case 2:  
 		v.push_back(new Circle());
 		break;
 
-	case 3:   //¸¸¾à ³×¸ð¸¦ ¼±ÅÃÇß´Ù¸é
+	case 3:  
 		v.push_back(new Rect());
 		break;
 	}
@@ -77,12 +77,12 @@ void GraphicEditor::deleteShape(int num) {
 		sh=v.erase(sh);
 	}
 	else
-		cout << "ÀÎµ¦½º¸¦ Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù." << endl;
+		cout << "ì¸ë±ìŠ¤ë¥¼ ìž˜ëª» ìž…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤." << endl;
 }
 
 void GraphicEditor::call() {
 	bool exit = true;
-	cout << "±×·¡ÇÈ ¿¡µðÅÍÀÔ´Ï´Ù." << endl;
+	cout << "ê·¸ëž˜í”½ ì—ë””í„°ìž…ë‹ˆë‹¤." << endl;
 	while (exit) {
 		switch (UI::selectBehavior()) {
 		case 1:
